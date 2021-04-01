@@ -1,24 +1,24 @@
 package web.model;
 
 public class Car {
-    String model;
+    String modelCar;
     int series;
     int price;
     String category;
 
-    public Car(String model, int series, int price, String category) {
-        this.model = model;
+    public Car(String modelCar, int series, int price, String category) {
+        this.modelCar = modelCar;
         this.series = series;
         this.price = price;
         this.category = category;
     }
 
-    public String getModel() {
-        return model;
+    public String getModelCar() {
+        return modelCar;
     }
 
-    public void setModel(String model) {
-        this.model = model;
+    public void setModel(String modelCar) {
+        this.modelCar = modelCar;
     }
 
     public int getSeries() {
