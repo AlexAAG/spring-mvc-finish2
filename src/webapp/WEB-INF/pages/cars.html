@@ -12,9 +12,10 @@
     <!--  th:text="${car.getModel()}.. текст подставляющийся вместо user     -->
     <!--  методы, по которым можно обращаться к car берутся из класса Car.java     -->
     <!--  /{modelCar}(modelCar=${car.getModelCar() динамичеыская страница     -->
-    <div th:each="car : ${sudaIdi}">
-        <h1 th:text="${sudaIdi}"></h1>
-        <a th:href="@{/show/{modelCar}(modelCar=${car.getModelCar()})}" th:text="${car.getModelCar()}">user</a>
+    <!--th:href="@{/{modelCar}(modelCar=${car.getModelCar()})}"-->
+    <div> <th:block th:each="car : ${sudaIdi}" >
+        <h1 th:text="${car}"></h1>
+    </th:block>
     </div>
 </body>
 </html>
