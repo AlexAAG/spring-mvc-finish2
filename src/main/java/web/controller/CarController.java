@@ -12,6 +12,7 @@ import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class CarController {
@@ -36,6 +37,12 @@ public class CarController {
 //        model.addAttribute("car", car);  //называться одинаково, но это не точно. Вкладывать модель, а не представление
         return "cars";                                  //урл по которому будет показываться и лежать html
     }
+
+//    @GetMapping("/cars")
+//    public String showCars(@RequestParam(value = "count") Optional<Integer> count, Model model) {
+//        model.addAttribute("cars", carDao.getCars(count.orElse(0)));
+//        return "cars";
+//    }
 
 
 

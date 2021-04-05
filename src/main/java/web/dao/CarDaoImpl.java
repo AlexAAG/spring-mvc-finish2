@@ -49,8 +49,8 @@ public class CarDaoImpl implements CarDao {
 //    }
 
     @Override
-    public Car showCar(String model) {
-        List<Car> listCarFirstList = getCars();
+    public Car showCar(String model, Integer count) {
+        List<Car> listCarFirstList = getCars(count);
 
         for (Car car : listCarFirstList) {
             if (car.getModelCar().equals(model)) {
