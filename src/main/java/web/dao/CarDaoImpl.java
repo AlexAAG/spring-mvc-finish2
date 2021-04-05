@@ -40,12 +40,23 @@ public class CarDaoImpl implements CarDao {
         return listCars;
     }
 
+//не работает                                                         //возвращает одну модель
+//    @Override
+//    public Car showCar(String modelCar) {
+//                                            //создаем стрим, фильтруем по моделям, ищем машину или возвращаем нал
+//
+//        return listCar.stream().filter(listCar -> listCar.getModelCar() == modelCar).findAny().orElse(null);
+//    }
+
     @Override
-    public List<Car> getCarsId(int id) {
-        List<Car> listCarFirstList = getListCar();
-        return listCarFirstList
-                .stream()
-                .limit(id)
-                .collect(Collectors.toList());
+    public Car showCar(String model) {
+        List<Car> listCarFirstList = getCars();
+
+        for (Car car : listCarFirstList) {
+            if (car.getModelCar().equals(model)) {
+                return car;
+            }
+        }
+        return null;
     }
 }
