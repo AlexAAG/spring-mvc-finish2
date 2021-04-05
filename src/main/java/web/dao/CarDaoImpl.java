@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component                                              //создаем бин дао
+@Component
 public class CarDaoImpl implements CarDao {
 //    private List<Car> listCar;
 
@@ -38,25 +38,5 @@ public class CarDaoImpl implements CarDao {
         listCars.add(new Car("BMW", 5, 3410000, "Business"));
         listCars.add(new Car("Mercedes", 1, 3750000, "Business"));
         return listCars;
-    }
-
-//не работает                                                         //возвращает одну модель
-//    @Override
-//    public Car showCar(String modelCar) {
-//                                            //создаем стрим, фильтруем по моделям, ищем машину или возвращаем нал
-//
-//        return listCar.stream().filter(listCar -> listCar.getModelCar() == modelCar).findAny().orElse(null);
-//    }
-
-    @Override
-    public Car showCar(String model, Integer count) {
-        List<Car> listCarFirstList = getCars(count);
-
-        for (Car car : listCarFirstList) {
-            if (car.getModelCar().equals(model)) {
-                return car;
-            }
-        }
-        return null;
     }
 }
